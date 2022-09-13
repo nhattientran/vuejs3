@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>test Vuejs</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <div id="app">
+        <h1 @click= "show" :style ="styleData">Xin chào {{msg}}</h1>
+        <form @submit.prevent="onSubmit" style = 'text-align:center;'>
+            <input type="text" name="name" placeholder="Nhập vào tên">
+            <input type="submit" value="Gửi">
+        </form>
+    </div>
+</body>
+<script src="https://unpkg.com/vue@3"></script>
+
+<script>
+  const { createApp, ref } = Vue
+
+  createApp({
+    data() {
+      return {
+        msg: 'TNT',
+        styleData:"text-align: center; color: red",
+        onSubmit : function(){
+            alert("Bạn vừa submit")
+        },
+        show : function(){
+            alert('Bạn vừa click')
+        }
+    }
+}
+  }).mount('#app')
+</script>
+</html> 
+            
+            
